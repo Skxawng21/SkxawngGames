@@ -1,6 +1,3 @@
-// randomNew.js – игра "Виселица"
-
-// Списки слов по уровням
 const WORDS_EASY = [
     'лампа', 'стена', 'книга', 'ручка', 'кошка',
     'мышка', 'шапка', 'школа', 'парта', 'пенал',
@@ -169,7 +166,6 @@ function handleGuess(letter) {
         isGameOver = true;
         input.disabled = true;
         playBtn.disabled = true;
-        // Показываем всё слово
         wordDisplay.textContent = currentWord.split('').join(' ');
         return;
     }
@@ -195,7 +191,6 @@ document.getElementById('Hard').addEventListener('click', function () {
     startGame(word);
 });
 
-// Обработка ввода буквы
 playBtn.addEventListener('click', function () {
     const val = input.value;
     if (val.length === 0) {
