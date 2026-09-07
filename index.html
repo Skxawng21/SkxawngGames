@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виселица</title>
+    <title>Игры</title>
     <style>
         body {
             display: flex;
@@ -13,8 +13,12 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: rgb(160, 201, 201);
         }
-
-        #Сomplexity {
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #Game {
+            width: 60%;
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
@@ -33,7 +37,7 @@
             transform: translateY(-10px);
         }
 
-        .btnСomplexity {
+        .btnGame {
             width: 200px;
             height: 80px;
             border-radius: 10px;
@@ -42,190 +46,20 @@
             margin: 20px;
         }
 
-        .hidden {
-            display: none;
-        }
-
-        .playZone {
-            width: 75%;
-            min-height: 300px;
-            background-color: rgb(112, 175, 175);
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 20px;
-            gap: 20px;
-        }
-
-        .playZone.hidden {
-            display: none;
-        }
-
-        .playZone input {
-            width: 200px;
-            height: 40px;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .playZone p {
-            height: 20px;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        .play {
-            width: 40px;
-            height: 40px;
-            background-color: rgb(190, 226, 137);
-            border: none;
-            border-radius: 8px;
-            text-align: center;
-            color: rgb(48, 48, 48);
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .play:hover {
-            background-color: rgb(217, 235, 192);
-        }
-
-        .ButtonSettings {
-            width: 90%;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: auto;
-        }
-
-        .ButtonSettings button {
-            width: 150px;
-            height: 50px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .wordDisplay {
-            font-size: 32px;
-            letter-spacing: 10px;
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
-            border-radius: 10px;
-            min-height: 50px;
-        }
-
-        .infoLine {
-            display: flex;
-            gap: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            flex-wrap: wrap;
-        }
-
-        .usedLetters {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .usedLetters span {
-            background: #eee;
-            padding: 4px 8px;
-            border-radius: 5px;
-            margin: 0 3px;
-        }
-
-        #message {
-            font-size: 18px;
-            font-weight: bold;
-            min-height: 30px;
-            color: #1a1a1a;
-        }
-
-        .inputGroup {
-            width: 95%;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        @media screen and (max-width: 767px) {
-            .inputGroup{
-                gap: 20px;
-            }
-            .inputGroup input {
-                width: 100%;
-            }
-
-            .play {
-                width: 100%;
-            }
-
-            .bykva {
-                flex-wrap: wrap;
-            }
-
-            .btnСomplexity {
-                width: 160px;
-                height: 70px;
-                margin: 0px;
-            }
-            .ButtonSettings{
-                gap: 20px;
-            }
-            .ButtonSettings button {
-                width: 100%;
-                
-            }
-        }
     </style>
 </head>
 
 <body>
-    <h1>Виселица</h1>
-    <h3 id="СomplexityH3">Уровень сложности:</h3>
-    <div id="Сomplexity">
-        <button class="btnСomplexity" style="background-color: rgb(204, 176, 231);" id="Easy">Лёгкий (5 букв)</button>
-        <button class="btnСomplexity" style="background-color: rgb(125, 141, 230);" id="Normal">Нормальный (10
-            букв)</button>
-        <button class="btnСomplexity" style="background-color: rgb(245, 146, 171);" id="Hard">Сложный (больше
-            10)</button>
+    <h1>Мини игры</h1>
+    <h3 id="GameH3">Выберите игру:</h3>
+    <div id="Game">
+        <button class="btnGame" style="background-color: rgb(204, 176, 231);" id="Easy"><a href="random.html">Угадай число</a></button>
+        <button class="btnGame" style="background-color: rgb(125, 141, 230);" id="Normal"><a href="visilica.html">Виселица</a></button>
+        <button class="btnGame" style="background-color: rgb(245, 146, 171);" id="Hard"><a href="math.html">Математика</a></button>
+        <button class="btnGame" style="background-color: #9be79b;" id="Hard"><a href="№">Скоро</a></button>
     </div>
 
-    <div class="playZone hidden" id="PlayZone">
-        <h2 id="PzH2">Угадайте слово</h2>
-        <div class="wordDisplay" id="wordDisplay">_ _ _ _ _</div>
-
-        <div class="infoLine">
-            <span>Ошибок: <span id="errorCount">0</span> / <span id="maxErrors">6</span></span>
-            <span class="bykva">Буквы: <span id="usedLettersDisplay" class="usedLetters">—</span></span>
-        </div>
-
-        <div class="inputGroup">
-            <input id="PzInput" type="text" maxlength="1" placeholder="Буква">
-            <button class="play" id="playBtn">►</button>
-        </div>
-
-        <p id="message">Введите букву</p>
-
-        <div class="ButtonSettings">
-            <button id="reset" style="background-color: rgb(247, 202, 118);">Заново</button>
-            <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
-        </div>
-    </div>
-
-    <script src="visilica.js"></script>
+    <script src="script/visilica.js"></script>
 </body>
 
 </html>

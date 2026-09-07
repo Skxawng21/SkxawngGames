@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай число</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(160, 201, 201);
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: translateY(-10px);
+        }
+
+        .btnСomplexity {
+            width: 200px;
+            height: 80px;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            margin: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .playZone {
+            width: 65%;
+            height: 300px;
+            background-color: rgb(112, 175, 175);
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 20px;
+            gap: 20px;
+        }
+
+        .playZone.hidden {
+            display: none;
+        }
+
+        .playZone input {
+            width: 400px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .playZone p {
+            height: 20px;
+        }
+
+        .play {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(190, 226, 137);
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            color: rgb(48, 48, 48);
+        }
+
+        .play:hover {
+            background-color: rgb(217, 235, 192);
+        }
+
+        .ButtonSettings {
+            width: 450px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ButtonSettings button {
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+    <h1>Угадай число</h1>
+    <h3 id="СomplexityH3">уровень сложности:</h3>
+    <div id="Сomplexity">
+        <button class="btnСomplexity" style="background-color: rgb(204, 176, 231);" id="Easy">Лёгкий</button>
+        <button class="btnСomplexity" style="background-color: rgb(125, 141, 230);" id="Normal">Нормальный</button>
+        <button class="btnСomplexity" style="background-color: rgb(245, 146, 171);" id="Hard">Сложный </button>
+    </div>
+    <div class="playZone hidden" id="PlayZone">
+        <h2 id="PzH2">Введите число от ... до ...</h2>
+        <div>
+            <input id="PzInput" type="text" placeholder="Введите число...">
+            <button class="play" id="playBtn">►</button>
+        </div>
+        <p id="progress">0% - введите число</p>
+        <div class="ButtonSettings">
+            <button id="reset" style="background-color: rgb(247, 202, 118);">Заново</button>
+            <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
+        </div>
+    </div>
+    <a href="index.html" style="margin-top: 100px;">В главное меню →</a>
+    <script src="script/randomNew.js"></script>
+</body>
+
+</html>

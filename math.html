@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математитка</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(160, 201, 201);
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: translateY(-10px);
+        }
+
+        .btnComplexity {
+            width: 200px;
+            height: 80px;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            margin: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .playZone {
+            width: 65%;
+            height: 350px;
+            background-color: rgb(112, 175, 175);
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 20px;
+            gap: 10px;
+        }
+
+        .playZone.hidden {
+            display: none;
+        }
+
+        .playZone input {
+            width: 400px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+
+        .playZone p {
+            height: 20px;
+            margin: 5px 0;
+        }
+
+        .play {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(190, 226, 137);
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            color: rgb(48, 48, 48);
+            cursor: pointer;
+        }
+
+        .play:hover {
+            background-color: rgb(217, 235, 192);
+        }
+
+        .ButtonSettings {
+            width: 450px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ButtonSettings button {
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #questionText {
+            margin: 0;
+        }
+
+        #timerDisplay {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Реши примеры на скорость</h1>
+    <h3 id="complexityH3">уровень сложности:</h3>
+    <div id="complexityButtons">
+        <button class="btnComplexity" style="background-color: rgb(204, 176, 231);" id="Easy">Лёгкий</button>
+        <button class="btnComplexity" style="background-color: rgb(125, 141, 230);" id="Normal">Средний</button>
+        <button class="btnComplexity" style="background-color: rgb(245, 146, 171);" id="Hard">Сложный</button>
+    </div>
+
+    <div class="playZone hidden" id="playZone">
+        <p id="timerDisplay">00:00</p>
+        <h2 id="questionText">5 + 3 = ?</h2>
+        <div>
+            <input id="answerInput" type="text" placeholder="Введите ответ...">
+            <button class="play" id="submitBtn">►</button>
+        </div>
+        <p id="progress">Вопрос 1 из 15</p>
+        <div class="ButtonSettings">
+            <button id="reset" style="background-color: rgb(247, 202, 118);">Заново</button>
+            <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
+        </div>
+    </div>
+    <a href="index.html" style="margin-top: 100px;">В главное меню →</a>
+    <script src="script/math.js"></script>
+</body>
+</html>
