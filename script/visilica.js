@@ -125,6 +125,7 @@ const errorCountSpan = document.getElementById('errorCount');
 const maxErrorsSpan = document.getElementById('maxErrors');
 const usedLettersSpan = document.getElementById('usedLettersDisplay');
 const messageP = document.getElementById('message');
+const replayBtn = document.getElementById('replay');
 
 let currentWord = '';
 let guessedLetters = [];
@@ -312,4 +313,32 @@ exitBtn.addEventListener('click', function () {
     messageP.textContent = 'Введите букву';
     messageP.style.color = '#1a1a1a';
     h3.textContent = 'Уровень сложности:';
+});
+// Повтор игры
+replayBtn.addEventListener('click', function() {
+    if (currentWord) {
+        let newWord = '';
+        const level = h3.textContent;
+        
+        if (level.includes('Лёгкий')) {
+            newWord = WORDS_EASY[Math.floor(Math.random() * WORDS_EASY.length)];
+            h3.textContent = 'Уровень: Лёгкий (5 букв)';
+        } else if (level.includes('Нормальный')) {
+            newWord = WORDS_NORMAL[Math.floor(Math.random() * WORDS_NORMAL.length)];
+            h3.textContent = 'Уровень: Нормальный (10 букв)';
+        } else if (level.includes('Сложный')) {
+            newWord = WORDS_HARD[Math.floor(Math.random() * WORDS_HARD.length)];
+            h3.textContent = 'Уровень: Сложный (более 10 букв)';
+        } else {
+            exitBtn.click();
+            return;
+        }
+        
+        startGame(newWord);
+        messageP.textContent = 'Новая игра! Введите букву';
+        messageP.style.color = '#1a1a1a';
+        input.focus();
+    } else {
+        exitBtn.click();
+    }
 });

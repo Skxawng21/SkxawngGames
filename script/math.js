@@ -244,7 +244,6 @@ function endGame() {
     answerInput.disabled = true;
     submitBtn.disabled = true;
 }
-
 // Выход из игры
 function exitGame() {
     gameActive = false;
@@ -299,3 +298,5 @@ answerInput.addEventListener('keydown', (e) => {
         }
     }
 });
+
+console.log("игра готова к работе");
