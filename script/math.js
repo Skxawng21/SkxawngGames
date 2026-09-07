@@ -1,5 +1,5 @@
 const complexityH3 = document.getElementById('complexityH3');
-const complexityButtons = document.getElementById('complexityButtons');
+const complexityButtons = document.getElementById('Сomplexity');
 const playZone = document.getElementById('playZone');
 const questionText = document.getElementById('questionText');
 const answerInput = document.getElementById('answerInput');

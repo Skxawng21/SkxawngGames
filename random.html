@@ -15,11 +15,21 @@
             align-items: center;
             font-family: Arial, Helvetica, sans-serif;
             background-color: rgb(160, 201, 201);
+            text-align: center;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
         }
+
+        #Сomplexity {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         h1 {
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -46,8 +56,8 @@
         }
 
         .playZone {
-            width: 65%;
-            height: 300px;
+            width: 75%;
+            min-height: 300px;
             background-color: rgb(112, 175, 175);
             margin-top: 50px;
             display: flex;
@@ -63,15 +73,26 @@
             display: none;
         }
 
+        .inputGroup {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
         .playZone input {
             width: 400px;
             height: 40px;
             border: none;
             border-radius: 5px;
+            padding: 0 10px;
         }
 
         .playZone p {
             height: 20px;
+            margin: 0;
         }
 
         .play {
@@ -82,6 +103,8 @@
             border-radius: 8px;
             text-align: center;
             color: rgb(48, 48, 48);
+            cursor: pointer;
+            font-size: 20px;
         }
 
         .play:hover {
@@ -99,6 +122,50 @@
             height: 50px;
             border-radius: 10px;
             border: none;
+            cursor: pointer;
+        }
+
+        .inputGroup {
+            width: 95%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: 767px) {
+            .inputGroup {
+                gap: 20px;
+            }
+
+            .btnСomplexity {
+                height: 70px;
+                margin: 0px;
+            }
+
+            .inputGroup {
+                gap: 20px;
+            }
+
+            .inputGroup input {
+                width: 100%;
+            }
+
+            .play {
+                width: 100%;
+            }
+
+            .ButtonSettings {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .ButtonSettings button {
+                width: 100%;
+            }
         }
     </style>
     <h1>Угадай число</h1>
@@ -110,7 +177,7 @@
     </div>
     <div class="playZone hidden" id="PlayZone">
         <h2 id="PzH2">Введите число от ... до ...</h2>
-        <div>
+        <div class="inputGroup">
             <input id="PzInput" type="text" placeholder="Введите число...">
             <button class="play" id="playBtn">►</button>
         </div>
@@ -120,7 +187,7 @@
             <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
         </div>
     </div>
-    <a href="index.html" style="margin-top: 100px;">В главное меню →</a>
+    <a href="index.html" style="margin-top: 100px; margin-bottom: 50px;">В главное меню →</a>
     <script src="script/randomNew.js"></script>
 </body>
 

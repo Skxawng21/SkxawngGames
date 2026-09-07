@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Математитка</title>
+</head>
+<body>
     <style>
         body {
             display: flex;
@@ -11,13 +14,23 @@
             align-items: center;
             font-family: Arial, Helvetica, sans-serif;
             background-color: rgb(160, 201, 201);
+            text-align: center;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
         }
+
         h1 {
             font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #Сomplexity {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         button {
@@ -42,8 +55,8 @@
         }
 
         .playZone {
-            width: 65%;
-            height: 350px;
+            width: 75%;
+            min-height: 300px;
             background-color: rgb(112, 175, 175);
             margin-top: 50px;
             display: flex;
@@ -57,6 +70,15 @@
 
         .playZone.hidden {
             display: none;
+        }
+
+        .inputGroup {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
         }
 
         .playZone input {
@@ -81,6 +103,7 @@
             text-align: center;
             color: rgb(48, 48, 48);
             cursor: pointer;
+            font-size: 20px;
         }
 
         .play:hover {
@@ -111,12 +134,52 @@
             color: #2c3e50;
             margin: 0;
         }
+        .inputGroup {
+            width: 95%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: 767px) {
+            .inputGroup {
+                gap: 20px;
+            }
+            .btnComplexity,
+            .btnСomplexity {
+                height: 70px;
+                margin: 0px;
+            }
+
+            .inputGroup {
+                gap: 20px;
+            }
+
+            .inputGroup input {
+                width: 100%;
+            }
+
+            .play {
+                width: 100%;
+            }
+
+            .ButtonSettings {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .ButtonSettings button {
+                width: 100%;
+            }
+        }
     </style>
-</head>
-<body>
+
     <h1>Реши примеры на скорость</h1>
     <h3 id="complexityH3">уровень сложности:</h3>
-    <div id="complexityButtons">
+    <div id="Сomplexity">
         <button class="btnComplexity" style="background-color: rgb(204, 176, 231);" id="Easy">Лёгкий</button>
         <button class="btnComplexity" style="background-color: rgb(125, 141, 230);" id="Normal">Средний</button>
         <button class="btnComplexity" style="background-color: rgb(245, 146, 171);" id="Hard">Сложный</button>
@@ -125,7 +188,7 @@
     <div class="playZone hidden" id="playZone">
         <p id="timerDisplay">00:00</p>
         <h2 id="questionText">5 + 3 = ?</h2>
-        <div>
+        <div class="inputGroup">
             <input id="answerInput" type="text" placeholder="Введите ответ...">
             <button class="play" id="submitBtn">►</button>
         </div>
@@ -135,7 +198,8 @@
             <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
         </div>
     </div>
-    <a href="index.html" style="margin-top: 100px;">В главное меню →</a>
+    <a href="index.html" style="margin-top: 100px; margin-bottom: 50px;">В главное меню →</a>
     <script src="script/math.js"></script>
 </body>
+
 </html>

@@ -12,11 +12,15 @@
             align-items: center;
             font-family: Arial, Helvetica, sans-serif;
             background-color: rgb(160, 201, 201);
+            text-align: center;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
+            margin-bottom: 50px;
         }
+
         #Game {
             width: 60%;
             display: flex;
@@ -46,6 +50,12 @@
             margin: 20px;
         }
 
+        @media screen and (max-width: 767px) {
+            .btnGame {
+                height: 70px;
+                margin: 0px;
+            }
+        }
     </style>
 </head>
 
@@ -53,10 +63,13 @@
     <h1>Мини игры</h1>
     <h3 id="GameH3">Выберите игру:</h3>
     <div id="Game">
-        <button class="btnGame" style="background-color: rgb(204, 176, 231);" id="Easy"><a href="random.html">Угадай число</a></button>
-        <button class="btnGame" style="background-color: rgb(125, 141, 230);" id="Normal"><a href="visilica.html">Виселица</a></button>
-        <button class="btnGame" style="background-color: rgb(245, 146, 171);" id="Hard"><a href="math.html">Математика</a></button>
-        <button class="btnGame" style="background-color: #9be79b;" id="Hard"><a href="№">Скоро</a></button>
+        <button class="btnGame" style="background-color: rgb(204, 176, 231);" id="Easy"><a href="random.html">Угадай
+                число</a></button>
+        <button class="btnGame" style="background-color: rgb(125, 141, 230);" id="Normal"><a
+                href="visilica.html">Виселица</a></button>
+        <button class="btnGame" style="background-color: rgb(245, 146, 171);" id="Hard"><a
+                href="math.html">Математика</a></button>
+        <button class="btnGame" style="background-color: #9be79b;" id="Hard"><a href="index.html">Скоро</a></button>
     </div>
 
     <script src="script/visilica.js"></script>
