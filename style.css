@@ -1,0 +1,461 @@
+/* =========================================================
+   ОБЩИЕ СТИЛИ (используются во всех играх и на главной)
+   ========================================================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(160, 201, 201);
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-10px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Кнопки выбора сложности (общий вид) */
+.btnComplexity,
+.btnСomplexity {
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+/* Контейнер выбора сложности */
+#Complexity,
+#Сomplexity {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Игровая зона */
+.playZone {
+    width: 75%;
+    min-height: 300px;
+    background-color: rgb(112, 175, 175);
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.playZone.hidden {
+    display: none !important;
+}
+
+.playZone input {
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.playZone p {
+    margin: 0;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* Кнопка "играть" (стрелочка) */
+.play {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(190, 226, 137);
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    color: rgb(48, 48, 48);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.play:hover {
+    background-color: rgb(217, 235, 192);
+}
+
+/* Кнопки настроек */
+.ButtonSettings {
+    width: 450px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ButtonSettings button {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Группа ввода */
+.inputGroup {
+    width: 95%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Ссылка "В главное меню" */
+a.menuLink {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* =========================================================
+   ГЛАВНАЯ СТРАНИЦА (index.html)
+   ========================================================= */
+
+#Game {
+    width: 60%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btnGame {
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin: 20px;
+}
+
+/* =========================================================
+   ИГРА "УГАДАЙ ЧИСЛО" (random.html)
+   ========================================================= */
+
+/* Кнопки сложности уже описаны в общих стилях (.btnСomplexity) */
+
+/* =========================================================
+   ИГРА "ВИСЕЛИЦА" (visilica.html)
+   ========================================================= */
+
+.wordDisplay {
+    font-size: 32px;
+    letter-spacing: 10px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-height: 50px;
+}
+
+.infoLine {
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.usedLetters {
+    font-size: 18px;
+    color: #333;
+}
+
+.usedLetters span {
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 0 3px;
+}
+
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 30px;
+    color: #1a1a1a;
+}
+
+/* =========================================================
+   ИГРА "МАТЕМАТИКА" (math.html)
+   ========================================================= */
+
+#questionText {
+    margin: 0;
+}
+
+#timerDisplay {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* =========================================================
+   ИГРА "ЗАПОМНИ ЦВЕТ" (memory.html)
+   ========================================================= */
+
+.colorGrid {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.colorBlock {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    background-color: #bdc3c7;
+    transition: transform .2s, box-shadow .2s, background-color .2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.colorBlock:hover {
+    transform: scale(1.06);
+}
+
+.colorBlock.active {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 4px #fff, 0 0 16px #fff;
+}
+
+.colorBlock.wrong {
+    animation: shake .4s;
+    box-shadow: 0 0 0 4px red;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* Палитра цветов */
+.palette {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, .25);
+    border-radius: 12px;
+}
+
+.paletteColor {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform .2s, border-color .2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+.paletteColor:hover {
+    transform: scale(1.1);
+}
+
+.paletteColor.selected {
+    border-color: #fff;
+    transform: scale(1.12);
+}
+
+#status {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    min-height: 28px;
+}
+
+#levelInfo {
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+/* =========================================================
+   ИГРА "НАЙДИ ПАРУ" (pairs.html)
+   ========================================================= */
+
+.playZone.pairsPlayZone {
+    width: 90%;
+    max-width: 1100px;
+    gap: 15px;
+}
+
+.playZone.pairsPlayZone .playZone {
+    /* защита от вложенных стилей, если понадобится */
+    all: unset;
+}
+
+.cardsGrid {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 110px;
+    perspective: 800px;
+    cursor: pointer;
+}
+
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner,
+.card.matched .cardInner {
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    cursor: default;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+}
+
+.card.matched .cardInner {
+    transition: transform .5s, opacity .4s;
+}
+
+.cardFace {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    user-select: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+}
+
+.cardBack {
+    background: linear-gradient(135deg, #6d8fb5, #43607e);
+    color: white;
+    font-size: 1.5em;
+}
+
+.cardFront {
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ (общие адаптивные правила)
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+    .inputGroup {
+        gap: 20px;
+    }
+
+    .btnComplexity,
+    .btnСomplexity {
+        height: 70px;
+        margin: 0;
+    }
+
+    .inputGroup input {
+        width: 100%;
+    }
+
+    .play {
+        width: 100%;
+    }
+
+    .ButtonSettings {
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .ButtonSettings button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    /* Главная */
+    .btnGame {
+        height: 70px;
+        margin: 0;
+    }
+
+    /* Виселица */
+    .bykva {
+        flex-wrap: wrap;
+    }
+
+    /* Запомни цвет */
+    .colorBlock {
+        width: 55px;
+        height: 55px;
+    }
+
+    .paletteColor {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* Найди пару */
+    .cardFace {
+        font-size: 1.6em;
+    }
+
+    .cardsGrid {
+        gap: 6px;
+    }
+}

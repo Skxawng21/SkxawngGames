@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запомни цвет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Запомни цвет</h1>
+    <h3 id="complexityH3">Уровень сложности:</h3>
+    <div id="Complexity">
+        <button class="btnComplexity" style="background-color: rgb(204, 176, 231);" id="Easy">Лёгкий</button>
+        <button class="btnComplexity" style="background-color: rgb(125, 141, 230);" id="Normal">Средний</button>
+        <button class="btnComplexity" style="background-color: rgb(245, 146, 171);" id="Hard">Сложный</button>
+        <button class="btnComplexity" style="background-color: rgb(155, 231, 155);" id="Custom">Особый</button>
+    </div>
+
+    <div class="playZone hidden" id="playZone">
+        <p id="status">Приготовьтесь...</p>
+        <p id="levelInfo"></p>
+
+        <div class="colorGrid" id="colorGrid"></div>
+
+        <div class="palette hidden" id="palette"></div>
+
+        <div class="inputGroup hidden" id="customSettings">
+            <input id="customCount" type="number" placeholder="Кол-во блоков (3–50)" min="3" max="50">
+            <input id="customTime" type="number" placeholder="Время показа, сек (1–30)" min="1" max="30">
+            <button class="play" id="customStart"
+                style="width:40px;height:40px;border:none;border-radius:8px;background:rgb(190,226,137);font-size:20px;cursor:pointer;">►</button>
+        </div>
+
+        <div class="ButtonSettings">
+            <button id="checkBtn" style="background-color: rgb(155, 231, 155);" class="hidden">Проверить</button>
+            <button id="replay" style="background-color: rgb(181, 139, 194);">Играть ещё раз</button>
+            <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
+        </div>
+    </div>
+
+    <a href="index.html" style="margin-top: 100px; margin-bottom: 50px;">В главное меню →</a>
+    <script src="script/memory.js"></script>
+</body>
+
+</html>

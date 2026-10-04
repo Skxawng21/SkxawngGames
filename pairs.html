@@ -4,33 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Математитка</title>
+    <title>Найди пару</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Реши примеры на скорость</h1>
-    <h3 id="complexityH3">уровень сложности:</h3>
-    <div id="Сomplexity">
+    <h1>Найди пару</h1>
+    <h3 id="complexityH3">Уровень сложности:</h3>
+    <div id="Complexity">
         <button class="btnComplexity" style="background-color: rgb(204, 176, 231);" id="Easy">Лёгкий</button>
         <button class="btnComplexity" style="background-color: rgb(125, 141, 230);" id="Normal">Средний</button>
         <button class="btnComplexity" style="background-color: rgb(245, 146, 171);" id="Hard">Сложный</button>
     </div>
 
     <div class="playZone hidden" id="playZone">
-        <p id="timerDisplay">00:00</p>
-        <h2 id="questionText">5 + 3 = ?</h2>
-        <div class="inputGroup">
-            <input id="answerInput" type="number" placeholder="Введите ответ...">
-            <button class="play" id="submitBtn">►</button>
+        <div class="infoLine">
+            <span>Ходы: <span id="movesCount">0</span></span>
+            <span>Найдено пар: <span id="pairsFound">0</span> / <span id="pairsTotal">0</span></span>
+            <span>Время: <span id="timerDisplay">00:00</span></span>
         </div>
-        <p id="progress">Вопрос 1 из 15</p>
+
+        <div class="cardsGrid" id="cardsGrid"></div>
+
+        <p id="status">Найдите все пары</p>
+
         <div class="ButtonSettings">
-            <button id="reset" style="background-color: rgb(247, 202, 118);">Заново</button>
+            <button id="replay" style="background-color: rgb(181, 139, 194);">Играть ещё раз</button>
             <button id="exit" style="background-color: rgb(245, 88, 88);">Выйти</button>
         </div>
     </div>
+
     <a href="index.html" style="margin-top: 100px; margin-bottom: 50px;">В главное меню →</a>
-    <script src="script/math.js"></script>
+    <script src="script/pairs.js"></script>
 </body>
 
 </html>
