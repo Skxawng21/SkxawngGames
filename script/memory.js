@@ -38,7 +38,7 @@ let selectedColor = null;   // выбранный в палитре цвет
 let currentLevel = null;
 let gameActive = false;
 
-// ---------- Вспомогательные ----------
+//  Вспомогательные 
 function randInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -50,7 +50,7 @@ function getGridColumns(count) {
     return 4;
 }
 
-// ---------- Запуск игры ----------
+//  Запуск игры 
 function startGame(level, customBlocks = null, customSeconds = null) {
     currentLevel = level;
     customSettings.classList.add('hidden');
@@ -119,7 +119,7 @@ function startGame(level, customBlocks = null, customSeconds = null) {
     }, showTime);
 }
 
-// ---------- Сетка ----------
+//  Сетка 
 function buildGrid() {
     colorGrid.innerHTML = '';
     const cols = getGridColumns(blockCount);
@@ -134,7 +134,7 @@ function buildGrid() {
     }
 }
 
-// ---------- Палитра ----------
+//  Палитра 
 function buildPalette() {
     palette.innerHTML = '';
     PALETTE.forEach(color => {
@@ -151,7 +151,7 @@ function buildPalette() {
     });
 }
 
-// ---------- Клик по блоку ----------
+//  Клик по блоку 
 function onBlockClick(index) {
     if (!gameActive) return;
     // Пока идёт показ — блоки не трогаем
@@ -173,7 +173,7 @@ function onBlockClick(index) {
     status.style.color = '#2c3e50';
 }
 
-// ---------- Проверка ----------
+//  Проверка 
 checkBtn.addEventListener('click', () => {
     if (!gameActive) return;
 
@@ -201,7 +201,7 @@ checkBtn.addEventListener('click', () => {
     }
 
     if (correct === blockCount) {
-        status.textContent = `🎉 Идеально! Все ${blockCount} блоков угаданы!`;
+        status.textContent = `Идеально! Все ${blockCount} блоков угаданы!`;
         status.style.color = '#0b3f20';
     } else {
         status.textContent = `Правильно: ${correct} из ${blockCount}. Зелёная рамка — верно, цветная внутри — правильный цвет.`;
@@ -209,7 +209,7 @@ checkBtn.addEventListener('click', () => {
     }
 });
 
-// ---------- Обработчики уровней ----------
+//  Обработчики уровней 
 document.getElementById('Easy').addEventListener('click', () => startGame('easy'));
 document.getElementById('Normal').addEventListener('click', () => startGame('normal'));
 document.getElementById('Hard').addEventListener('click', () => startGame('hard'));
@@ -258,7 +258,7 @@ customTime.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') customStart.click();
 });
 
-// ---------- Играть ещё раз ----------
+//  Играть ещё раз 
 replayBtn.addEventListener('click', () => {
     if (currentLevel === 'custom') {
         const count = Number(customCount.value);
@@ -275,7 +275,7 @@ replayBtn.addEventListener('click', () => {
     }
 });
 
-// ---------- Выход ----------
+//  Выход 
 exitBtn.addEventListener('click', exitGame);
 
 function exitGame() {

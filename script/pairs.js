@@ -30,7 +30,7 @@ let timerInterval = null;
 let startTime = null;
 let gameActive = false;
 
-// ---------- Вспомогательные ----------
+//  Вспомогательные 
 function randInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -53,7 +53,7 @@ function getColumns(count) {
     return 7;
 }
 
-// ---------- Таймер ----------
+//  Таймер 
 function startTimer() {
     stopTimer();
     startTime = Date.now();
@@ -76,7 +76,7 @@ function stopTimer() {
     }
 }
 
-// ---------- Запуск игры ----------
+//  Запуск игры 
 function startGame(cardCount) {
     // cardCount — общее количество карточек (должно быть чётным)
     totalPairs = cardCount / 2;
@@ -105,7 +105,7 @@ function startGame(cardCount) {
     playZone.classList.remove('hidden');
 }
 
-// ---------- Построение сетки ----------
+//  Построение сетки 
 function buildGrid(cardCount) {
     cardsGrid.innerHTML = '';
     const cols = getColumns(cardCount);
@@ -135,7 +135,7 @@ function buildGrid(cardCount) {
     });
 }
 
-// ---------- Клик по карточке ----------
+//  Клик по карточке 
 function onCardClick(card, index) {
     if (!gameActive || lockBoard) return;
     if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
@@ -150,7 +150,7 @@ function onCardClick(card, index) {
     }
 }
 
-// ---------- Проверка пары ----------
+//  Проверка пары 
 function checkMatch() {
     lockBoard = true;
     const [first, second] = flippedCards;
@@ -186,7 +186,7 @@ function checkMatch() {
     }
 }
 
-// ---------- Завершение игры ----------
+//  Завершение игры 
 function endGame() {
     gameActive = false;
     stopTimer();
@@ -195,11 +195,11 @@ function endGame() {
     const seconds = elapsed % 60;
     const timeStr = minutes > 0 ? `${minutes} мин ${seconds} сек` : `${seconds} сек`;
 
-    status.textContent = `🎉 Победа! Ходов: ${moves}, время: ${timeStr}`;
+    status.textContent = `Победа! Ходов: ${moves}, время: ${timeStr}`;
     status.style.color = '#27ae60';
 }
 
-// ---------- Выход ----------
+//  Выход 
 function exitGame() {
     gameActive = false;
     stopTimer();
@@ -217,7 +217,7 @@ function exitGame() {
     complexityH3.textContent = 'Уровень сложности:';
 }
 
-// ---------- Обработчики кнопок сложности ----------
+//  Обработчики кнопок сложности 
 document.getElementById('Easy').addEventListener('click', () => {
     complexityH3.textContent = 'Уровень: Лёгкий (14 карточек)';
     startGame(14);
@@ -233,7 +233,7 @@ document.getElementById('Hard').addEventListener('click', () => {
     startGame(50);
 });
 
-// ---------- Играть ещё раз ----------
+//  Играть ещё раз 
 replayBtn.addEventListener('click', () => {
     const level = complexityH3.textContent;
     if (level.includes('Лёгкий')) {
